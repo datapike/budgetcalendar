@@ -6,7 +6,7 @@ gem 'rails', '4.2.5'
 gem 'devise'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
-
+gem 'simple_calendar', '~> 2.0', '>= 2.0.6'
 # Use sqlite3 as the database for Active Record
 
 # Use SCSS for stylesheets

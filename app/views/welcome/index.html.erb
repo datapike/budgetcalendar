@@ -1,3 +1,23 @@
 <h1>Welcome to the Budget Calendar App</h1>
 
+
+<%= month_calendar events: Transaction.all do |date, transactions, account_id| %>
+  <%= date %>
+
+  <% transactions.each do |transaction| %>
+    <% if transaction.amount < 0 %>
+      <div class="bill">
+    <% else %>
+      <div class="income">
+    <% end %>
+      <%= transaction.name %>: <%= transaction.amount %>
+    </div>
+  <% end %>
+  <!-- <div class="bill">
+    <%#= transactions.account.balance %>
+  </div>
+  -->
+  
+<% end %>
+
 <%= link_to "logout", destroy_user_session_path, method: :delete %>

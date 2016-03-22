@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160321132004) do
+ActiveRecord::Schema.define(version: 20160322121916) do
+
+  create_table "accounts", force: :cascade do |t|
+    t.decimal  "balance"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "name"
+    t.datetime "balance_date"
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.string   "name"
+    t.decimal  "amount"
+    t.boolean  "recurring",  default: false
+    t.datetime "start_time"
+    t.integer  "due_date"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.integer  "account_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
