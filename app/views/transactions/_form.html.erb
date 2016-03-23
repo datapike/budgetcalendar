@@ -32,8 +32,7 @@
     <%= f.number_field :due_date %>
   </div>
   <div class="field">
-    <%= f.label "Checking?" %><br>
-    <%= f.check_box :account_id %>
+    <%= f.hidden_field :account_id, :value => 1 %>
   </div>
   <div class="actions">
     <%= f.submit %>

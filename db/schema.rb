@@ -13,10 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20160323144210) do
 
-  create_table "account_events", force: :cascade do |t|
-    t.integer "account_id"
-    t.integer "event_id"
-  end
+  
 
   create_table "accounts", force: :cascade do |t|
     t.decimal  "balance"
