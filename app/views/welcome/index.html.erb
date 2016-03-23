@@ -3,7 +3,6 @@
 
 <%= month_calendar events: Transaction.all do |date, transactions, account_id| %>
   <%= date %>
-
   <% transactions.each do |transaction| %>
     <% if transaction.amount < 0 %>
       <div class="bill">
@@ -11,12 +10,14 @@
       <div class="income">
     <% end %>
       <%= transaction.name %>: <%= transaction.amount %>
+      <% @total += transaction.amount %>
+      <div class="income">
+        <%= @total %>
+      </div>
+      
     </div>
   <% end %>
-  <!-- <div class="bill">
-    <%#= transactions.account.balance %>
-  </div>
-  -->
+      
   
 <% end %>
 

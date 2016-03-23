@@ -24,12 +24,16 @@
     <%= f.datetime_select :start_time %>
   </div>
   <div class="field">
-    <%= f.label :recurring %><br>
+    <%= f.label "Recurring?" %><br>
     <%= f.check_box :recurring %>
   </div>
   <div class="field">
     <%= f.label :due_date %><br>
     <%= f.number_field :due_date %>
+  </div>
+  <div class="field">
+    <%= f.label "Checking?" %><br>
+    <%= f.check_box :account_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

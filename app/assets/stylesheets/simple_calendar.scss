@@ -1,4 +1,5 @@
 .simple-calendar {
+
   table {
     -webkit-border-horizontal-spacing: 0px;
     -webkit-border-vertical-spacing: 0px;
@@ -46,7 +47,7 @@
   }
 
   .day {
-    height: 80px;
+    height: 100px;
   }
 
   .wday-0 {}
@@ -72,7 +73,9 @@
   .next-month {
     background: #DDD;
   }
-  .current-month {}
+  .current-month {
+
+  }
 
   .has-events {}
 }
