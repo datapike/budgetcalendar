@@ -2,7 +2,7 @@
 
 
 <%= month_calendar events: Transaction.all do |date, transactions, account_id| %>
-  <%= date %>
+  <%= date.strftime('%d') %>
   <% transactions.each do |transaction| %>
     <% if transaction.amount < 0 %>
       <div class="bill">
@@ -10,15 +10,14 @@
       <div class="income">
     <% end %>
       <%= transaction.name %>: <%= transaction.amount %>
-      <% @total += transaction.amount %>
-      <div class="income">
-        <%= @total %>
       </div>
-      
-    </div>
+      <% if date >= @total_date %>
+      <div class="income">
+        <% @total += transaction.amount %>
+        <%= "Balance: #{@total}" %>
+      </div>
+    <% end %>
   <% end %>
-      
-  
 <% end %>
 
 <%= link_to "logout", destroy_user_session_path, method: :delete %>
