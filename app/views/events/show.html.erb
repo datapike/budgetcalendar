@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @event.name %>
+</p>
+
+<p>
+  <strong>Due Date:</strong>
+  <%= @event.start_time.to_date %>  
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @event.amount %>  
+</p>
+
+<p>
+  <strong>Recurring:</strong>
+  <%= @event.recurring %> <% if @event.recurring == true %> on day <%= @event.due_date %> <% end %>
+</p>
+
+<p>
+  <strong>Account:</strong>
+  <%= @event.account.name %>  
+</p>
+
+
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
